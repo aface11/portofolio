@@ -198,7 +198,7 @@ export default function Terminal() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none text-white caret-white placeholder-white/40"
+          className="flex-1 bg-transparent outline-none text-white caret-white placeholder-white/40 text-[16px]"
           placeholder="type a command..."
           spellCheck={false}
           autoComplete="off"

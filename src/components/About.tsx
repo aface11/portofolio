@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-8 bg-gray-50">
+    <section id="about" className="py-32 px-8 bg-black">
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,8 +12,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-sm tracking-widest uppercase text-gray-400 mb-6">About</p>
-          <h2 className="text-4xl font-bold text-gray-900 leading-snug">
+          <p className="text-sm tracking-widest uppercase text-white mb-6">About</p>
+          <h2 className="text-4xl font-bold text-white leading-snug">
             20+ years of award-winning production across every format and scale.
           </h2>
         </motion.div>
@@ -22,7 +22,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="space-y-5 text-gray-500 leading-relaxed"
+          className="space-y-5 text-white leading-relaxed"
         >
           <p>
             A career spanning 20+ years in production resulting in award-winning work across a broad spectrum

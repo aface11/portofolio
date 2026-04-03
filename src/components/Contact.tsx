@@ -12,11 +12,11 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <p className="text-sm tracking-widest uppercase text-gray-400 mb-6">Contact</p>
-        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+        <p className="text-sm tracking-widest uppercase text-white mb-6">Contact</p>
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
           Let&apos;s make something.
         </h2>
-        <p className="text-gray-500 mb-10 max-w-md mx-auto">
+        <p className="text-white mb-10 max-w-md mx-auto">
           Available for new projects, collaborations, and conversations.
         </p>
         <a

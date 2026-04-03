@@ -31,11 +31,11 @@ export default function Work() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-sm tracking-widest uppercase text-gray-400 mb-16"
+        className="text-sm tracking-widest uppercase text-white mb-16"
       >
         Productions
       </motion.h2>
-      <div className="divide-y divide-gray-100">
+      <div className="divide-y divide-white/10">
         {productions.map((item, i) => (
           <motion.div
             key={i}
@@ -46,12 +46,12 @@ export default function Work() {
             className="py-10 grid grid-cols-1 md:grid-cols-3 gap-4 group cursor-default"
           >
             <div>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{item.category} · {item.year}</p>
-              <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-gray-600 transition-colors">
+              <p className="text-xs text-white uppercase tracking-wider mb-1">{item.category} · {item.year}</p>
+              <h3 className="text-2xl font-semibold text-white group-hover:text-white transition-colors">
                 {item.title}
               </h3>
             </div>
-            <p className="md:col-span-2 text-gray-500 leading-relaxed self-center">
+            <p className="md:col-span-2 text-white leading-relaxed self-center">
               {item.description}
             </p>
           </motion.div>

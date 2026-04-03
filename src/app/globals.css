@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #111111;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -17,4 +17,6 @@ body {
   background: #000;
   color: #fff;
   height: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }

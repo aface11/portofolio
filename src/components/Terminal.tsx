@@ -27,7 +27,7 @@ function OutputLine({ output }: { output: CommandOutput }) {
 
   if (output.type === "ascii") {
     return (
-      <pre className="text-white text-[4px] sm:text-[6px] md:text-[8px] leading-[1.1] overflow-x-auto whitespace-pre">
+      <pre className={`text-white leading-[1.3] overflow-x-auto whitespace-pre ${output.large ? "text-[10px] sm:text-xs" : "text-[4px] sm:text-[6px] md:text-[8px] leading-[1.1]"}`}>
         {output.content}
       </pre>
     );
@@ -122,8 +122,19 @@ export default function Terminal() {
     } else {
       output = [
         {
-          type: "error",
-          content: `command not found: ${cmd}. Type 'help' for available commands.`,
+          type: "ascii" as const,
+          large: true,
+          content: `
+  _  _    ___   _  _
+ | || |  / _ \\ | || |
+ | || |_| | | || || |_
+ |__   _| | | ||__   _|
+    | |  | |_| |  | |
+    |_|   \\___/   |_|`,
+        },
+        {
+          type: "text" as const,
+          content: "Oh whatsup man. type CLEAR to see the menu",
         },
       ];
     }

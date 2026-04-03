@@ -1,6 +1,6 @@
 export type CommandOutput =
   | { type: "text"; content: string }
-  | { type: "ascii"; content: string }
+  | { type: "ascii"; content: string; large?: boolean }
   | { type: "list"; items: { label: string; value: string }[] }
   | { type: "section"; heading: string; body: string[] }
   | { type: "links"; heading: string; items: { label: string; description: string; url: string }[] }

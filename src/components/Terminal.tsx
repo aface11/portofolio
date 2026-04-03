@@ -172,6 +172,21 @@ export default function Terminal() {
         <p className="text-white text-xs tracking-widest uppercase">Adam Copeland</p>
         <p className="text-white text-xs tracking-widest uppercase">Executive Producer</p>
         <p className="text-white text-xs tracking-widest uppercase">Pasadena, Calif.</p>
+        <div className="flex items-center gap-2 mt-4">
+          <span className="text-white text-xs">~/adam</span>
+          <span className="text-white text-xs">❯</span>
+          <input
+            ref={inputRef}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="flex-1 bg-transparent outline-none text-white caret-white placeholder-white/40 text-[16px]"
+            placeholder="type a command..."
+            spellCheck={false}
+            autoComplete="off"
+            autoCapitalize="off"
+          />
+        </div>
       </div>
 
       {/* Terminal output */}
@@ -190,23 +205,6 @@ export default function Terminal() {
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Input */}
-      <div className="px-8 py-6 border-t border-neutral-900 flex items-center gap-2">
-        <span className="text-white">~/adam</span>
-        <span className="text-white">❯</span>
-        <input
-          ref={inputRef}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none text-white caret-white placeholder-white/40 text-[16px]"
-          placeholder="type a command..."
-          spellCheck={false}
-          autoComplete="off"
-          autoCapitalize="off"
-        />
       </div>
     </div>
   );

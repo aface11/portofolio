@@ -219,11 +219,11 @@ export const COMMANDS: Record<string, () => CommandOutput[]> = {
 
   contact: () => [
     {
-      type: "section",
+      type: "links",
       heading: "Contact",
-      body: [
-        "EMAIL      aface1@gmail.com",
-        "LINKEDIN   linkedin.com/in/adambendercopeland",
+      items: [
+        { label: "aface1@gmail.com", description: "", url: "mailto:aface1@gmail.com" },
+        { label: "LinkedIn", description: "", url: "https://www.linkedin.com/in/adambendercopeland" },
       ],
     },
   ],

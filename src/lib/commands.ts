@@ -186,7 +186,17 @@ export const COMMANDS: Record<string, () => CommandOutput[]> = {
         {
           label: "Louis Vuitton — Virgil Abloh Collection Launch",
           description: "Vimeo",
-          url: "https://vimeo.com/768415121",
+          url: "https://vimeo.com/manage/videos/324850411",
+        },
+        {
+          label: "Epic Games — Fall Guys",
+          description: "YouTube",
+          url: "https://www.youtube.com/watch?v=vQRseMRo4PA",
+        },
+        {
+          label: "Bethesda Games — Elder Scrolls Online Trailer",
+          description: "YouTube",
+          url: "https://www.youtube.com/watch?v=sbXQadoQmYw",
         },
         {
           label: "Hoka — PWRUP",

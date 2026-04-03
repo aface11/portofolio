@@ -49,8 +49,6 @@ function OutputLine({ output }: { output: CommandOutput }) {
               >
                 {item.label}
               </a>
-              <span className="text-white">—</span>
-              <span className="text-white">{item.description}</span>
             </div>
           ))}
         </div>

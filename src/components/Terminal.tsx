@@ -88,10 +88,14 @@ export default function Terminal() {
   const [input, setInput] = useState("");
   const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const latestEntryRef = useRef<HTMLDivElement>(null);
+  const prevLengthRef = useRef(0);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (history.length > prevLengthRef.current && prevLengthRef.current > 0) {
+      latestEntryRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    prevLengthRef.current = history.length;
   }, [history]);
 
   useEffect(() => {
@@ -173,7 +177,7 @@ export default function Terminal() {
       {/* Terminal output */}
       <div className="flex-1 px-8 py-8 space-y-8 overflow-y-auto">
         {history.map((entry, i) => (
-          <div key={i} className="space-y-3">
+          <div key={i} ref={i === history.length - 1 ? latestEntryRef : null} className="space-y-3">
             <div className="flex items-center gap-2 text-white">
               <span className="text-white">~/adam</span>
               <span className="text-white">❯</span>
@@ -186,7 +190,6 @@ export default function Terminal() {
             </div>
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* Input */}

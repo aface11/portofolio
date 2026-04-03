@@ -164,7 +164,7 @@ export default function Terminal() {
 
   return (
     <div
-      className="min-h-screen bg-black text-white font-mono text-sm flex flex-col"
+      className="h-screen overflow-hidden bg-black text-white font-mono text-sm flex flex-col"
       onClick={() => inputRef.current?.focus()}
     >
       {/* Header */}

@@ -134,7 +134,7 @@ export default function Terminal() {
         },
         {
           type: "text" as const,
-          content: "Oh whatsup man. type CLEAR to see the menu",
+          content: "Oh whatsup fam. type CLEAR to see the menu",
         },
       ];
     }

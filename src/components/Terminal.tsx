@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, KeyboardEvent } from "react";
 import { COMMANDS, AVAILABLE_COMMANDS, HistoryEntry, CommandOutput } from "@/lib/commands";
 
-function OutputLine({ output }: { output: CommandOutput }) {
+function OutputLine({ output, onCommand }: { output: CommandOutput; onCommand?: (cmd: string) => void }) {
   if (output.type === "error") {
     return <p className="text-red-400">{output.content}</p>;
   }
@@ -16,7 +16,11 @@ function OutputLine({ output }: { output: CommandOutput }) {
     return (
       <div className="space-y-1">
         {output.items.map((item) => (
-          <div key={item.label} className="flex gap-4">
+          <div
+            key={item.label}
+            className="flex gap-4 cursor-pointer hover:opacity-60 active:opacity-40 transition-opacity"
+            onClick={() => onCommand?.(item.label)}
+          >
             <span className="text-white w-20 shrink-0">{item.label}</span>
             <span className="text-white">{item.value}</span>
           </div>
@@ -211,7 +215,7 @@ export default function Terminal() {
             </div>
             <div className="pl-4 space-y-1">
               {entry.output.map((out, j) => (
-                <OutputLine key={j} output={out} />
+                <OutputLine key={j} output={out} onCommand={runCommand} />
               ))}
             </div>
           </div>

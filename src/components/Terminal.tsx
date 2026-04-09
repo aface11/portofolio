@@ -61,19 +61,26 @@ function OutputLine({ output, onCommand }: { output: CommandOutput; onCommand?: 
   }
 
   if (output.type === "section") {
+    const paragraphs: string[][] = [];
+    let current: string[] = [];
+    for (const line of output.body) {
+      if (line === "") {
+        if (current.length) { paragraphs.push(current); current = []; }
+      } else {
+        current.push(line);
+      }
+    }
+    if (current.length) paragraphs.push(current);
+
     return (
       <div className="space-y-2">
         <p className="text-white text-xs tracking-widest uppercase">{output.heading}</p>
-        <div className="space-y-0.5">
-          {output.body.map((line, i) =>
-            line === "" ? (
-              <div key={i} className="h-2" />
-            ) : (
-              <p key={i} className="text-white leading-relaxed">
-                {line}
-              </p>
-            )
-          )}
+        <div className="space-y-3">
+          {paragraphs.map((lines, i) => (
+            <p key={i} className="text-white leading-relaxed">
+              {lines.join(" ")}
+            </p>
+          ))}
         </div>
       </div>
     );

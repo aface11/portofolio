@@ -3,7 +3,7 @@ export type CommandOutput =
   | { type: "ascii"; content: string; large?: boolean }
   | { type: "list"; items: { label: string; value: string }[] }
   | { type: "section"; heading: string; body: string[] }
-  | { type: "links"; heading: string; items: { label: string; description: string; url: string }[] }
+  | { type: "links"; heading: string; items: { label: string; url: string }[] }
   | { type: "error"; content: string };
 
 export interface HistoryEntry {
@@ -120,97 +120,78 @@ export const COMMANDS: Record<string, () => CommandOutput[]> = {
       items: [
         {
           label: "Kanye West — Yeethoven: Kanye & Beethoven Mashup",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=DdF8Z1hMEwg",
         },
         {
           label: "Kanye West — My Beautiful Dark Twisted Fantasy Film",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=Jg5wkZ-dJXA",
         },
         {
           label: "Kanon — Brand Film",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=vdRny3uE7cU",
         },
         {
           label: "Adidas — Never Made",
-          description: "Vimeo",
           url: "https://vimeo.com/477378020",
         },
         {
           label: "Adidas — Alexander Wang Season 1",
-          description: "Vimeo",
           url: "https://vimeo.com/272070261",
         },
         {
           label: "Adidas — NMD Launch",
-          description: "Vimeo",
           url: "https://vimeo.com/474812321",
         },
         {
           label: "Adidas — Y-3 Paris Runway Livestream",
-          description: "Vimeo",
           url: "https://vimeo.com/323616990",
         },
         {
           label: "Adidas — Art Basel #TLKS",
-          description: "Vimeo",
           url: "https://vimeo.com/324851518",
         },
         {
           label: "Adidas — Brand Film",
-          description: "Vimeo",
           url: "https://vimeo.com/324850428",
         },
         {
           label: "Adidas — Brand Film (Never Finished)",
-          description: "Vimeo",
           url: "https://vimeo.com/585219281",
         },
         {
           label: "Adidas — Pitch Black NMD",
-          description: "Vimeo",
           url: "https://vimeo.com/324851774",
         },
         {
           label: "Adidas — AI NMD Film",
-          description: "Vimeo",
           url: "https://vimeo.com/324851408",
         },
         {
           label: "Adidas — Arkyn",
-          description: "Vimeo",
           url: "https://vimeo.com/585216064",
         },
         {
           label: "Louis Vuitton — Virgil Abloh Collection Launch",
-          description: "Vimeo",
           url: "https://vimeo.com/manage/videos/324850411",
         },
         {
           label: "Epic Games — Fall Guys",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=vQRseMRo4PA",
         },
         {
           label: "Bethesda Games — Elder Scrolls Online Trailer",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=sbXQadoQmYw",
         },
         {
           label: "Hoka — PWRUP",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=-V0A6UEtsFY",
         },
         {
           label: "Adobe Lightroom — Assisted Culling ft. Jake Inez",
-          description: "Instagram",
           url: "https://www.instagram.com/reel/DQXUOwqEjb6/",
         },
         {
           label: "Assouline — Holiday 2025 (AI)",
-          description: "YouTube",
           url: "https://www.youtube.com/watch?v=_z8UPdq5fl0",
         },
       ],
@@ -222,8 +203,8 @@ export const COMMANDS: Record<string, () => CommandOutput[]> = {
       type: "links",
       heading: "Contact",
       items: [
-        { label: "aface1@gmail.com", description: "", url: "mailto:aface1@gmail.com" },
-        { label: "LinkedIn", description: "", url: "https://www.linkedin.com/in/adambendercopeland" },
+        { label: "aface1@gmail.com", url: "mailto:aface1@gmail.com" },
+        { label: "LinkedIn", url: "https://www.linkedin.com/in/adambendercopeland" },
       ],
     },
   ],

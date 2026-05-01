@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "--webpack"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "tantrums",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["serve-static.js"],
+      "port": 3001
+    }
+  ]
+}
